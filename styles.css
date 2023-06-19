@@ -56,3 +56,42 @@ img {
     top: 30px;
     right: -30px;
 }
+
+.result {
+    font-size: 40px;
+    color: white;   
+}
+
+.result > p {
+    text-align: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.choices {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.choice {
+    display: inline-block;
+    border: 4px solid white;
+    border-radius: 50%;
+    padding: 10px;
+    margin: 0 20px;
+    transition: all 0.3s ease;
+
+}
+
+.choice:hover {
+    cursor: pointer;
+    background:white;
+}
+
+#action-message {
+    text-align: center;
+    color: white;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 20px;
+    font-weight: bold;
+}
