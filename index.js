@@ -22,32 +22,41 @@ function convertToWord(letter) {
 }
 
 function win(playerChoice, computerChoice) {
+    const smallPlayerWord = "player".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    const playerChoice_div = document.getElementById(playerChoice);
     playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
-    const smallPlayerWord = "player".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
     result_p.innerHTML = `${convertToWord(playerChoice)}${smallPlayerWord} beats ${convertToWord(computerChoice)}${smallCompWord}. You Win!`;
-
+    playerChoice_div.classList.add('green-glow');
+    setTimeout(function() { document.getElementById(playerChoice).classList.remove('green-glow')}, 300);
 }
 
+
+
 function lose(playerChoice, computerChoice) {
+    const smallPlayerWord = "player".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    const playerChoice_div = document.getElementById(playerChoice);
     playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
-    const smallPlayerWord = "player".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
     result_p.innerHTML = `${convertToWord(playerChoice)}${smallPlayerWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You Lost!`;
+    playerChoice_div.classList.add('red-glow');
+    setTimeout(function() { document.getElementById(playerChoice).classList.remove('red-glow')}, 300);
 }
 
 function draw(playerChoice, computerChoice) {
+    const smallPlayerWord = "player".fontsize(3).sub();
+    const smallCompWord = "comp".fontsize(3).sub();
+    const playerChoice_div = document.getElementById(playerChoice);
     playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
-    const smallPlayerWord = "player".fontsize(3).sub();
-    const smallCompWord = "comp".fontsize(3).sub();
     result_p.innerHTML = `${convertToWord(playerChoice)}${smallPlayerWord} equals ${convertToWord(computerChoice)}${smallCompWord}. You Draw!`;
-
+    playerChoice_div.classList.add('gray-glow');
+    setTimeout(function() { document.getElementById(playerChoice).classList.remove('gray-glow')}, 300);
 }
 
 function game(playerChoice) {
@@ -71,3 +80,18 @@ function game(playerChoice) {
     }
 }
 
+function main () {
+    rock_div.addEventListener('click', function() {
+        game("r");
+    })
+      paper_div.addEventListener('click', function() {
+        game("p");
+    })
+
+    scissors_div.addEventListener('click', function() {
+        game("s");
+    })
+
+}
+
+main();
