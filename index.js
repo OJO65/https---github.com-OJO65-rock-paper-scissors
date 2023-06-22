@@ -1,5 +1,5 @@
-const playerScore = 0;
-const computerScore = 0;
+let playerScore = 0;
+let computerScore = 0;
 const playerScore_span = document.getElementById("player-score");
 const computerScore_span = document.getElementById("computer-score");
 const scoreBoard_div = document.querySelector(".score-board");
@@ -39,7 +39,7 @@ function lose(playerChoice, computerChoice) {
     const smallPlayerWord = "player".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
     const playerChoice_div = document.getElementById(playerChoice);
-    playerScore++;
+    computerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(playerChoice)}${smallPlayerWord} loses to ${convertToWord(computerChoice)}${smallCompWord}. You Lost!`;
@@ -51,7 +51,6 @@ function draw(playerChoice, computerChoice) {
     const smallPlayerWord = "player".fontsize(3).sub();
     const smallCompWord = "comp".fontsize(3).sub();
     const playerChoice_div = document.getElementById(playerChoice);
-    playerScore++;
     playerScore_span.innerHTML = playerScore;
     computerScore_span.innerHTML = computerScore;
     result_p.innerHTML = `${convertToWord(playerChoice)}${smallPlayerWord} equals ${convertToWord(computerChoice)}${smallCompWord}. You Draw!`;
